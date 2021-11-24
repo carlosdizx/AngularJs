@@ -1,54 +1,43 @@
 <!DOCTYPE html>
-<html ng-app>
+<html ng-app="universidadApp">
   <head>
     <meta charset="UTF-8" />
     <title>Primer ejemplo angular</title>
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <script src="js/lib/angular.min.js"></script>
+    <script src="js/aplicacion.js"></script>
   </head>
   <body>
-    <div class="container">
-      <h1>Ng-Model de angularjs</h1>
+    <div class="container" ng-controller="profesorCtrl as profe">
+      <h1>Ng-Model y controler de angularjs</h1>
       <hr />
       <p>
-        Su nombre es: {{nombre}}
-        <br />
-        Su apellido es: {{apellido}}
         <input
           type="text"
-          ng-model="nombre"
           class="form-control"
-          placeholder="Nombre"
+          value="{{profe.profesor.nombre}}"
+          disabled
         />
         <br />
-        <input
-          type="text"
-          ng-model="apellido"
-          class="form-control"
-          placeholder="Apellido"
-        />
       </p>
 
-      <p>
-        Su pais: {{pais}}
-        <select class="form-control" ng-model="pais">
-          <option value="Colombia">Colombia</option>
-          <option value="Ecuador">Ecuador</option>
-          <option value="Venezuela">Venezuela</option>
-        </select>
-      </p>
-      <p>
-        Sus opciones: <br />
-        -Opcion 1: {{opcion1 ? "Activada" : "Deactivada"}} <br />
-        -Opcion 2: {{opcion2 ? "Activada" : "Deactivada"}} <br />
-        <input type="checkbox" id="opcion" ng-model="opcion1" /> Opcion 1 <br />
-        <input type="checkbox" ng-model="opcion2" /> Opcion 2 <br />
-      </p>
-      <p>
-        Su genero: {{genero}}<br />
-        <input type="radio" value="M" ng-model="genero" />Masculino <br />
-        <input type="radio" value="F" ng-model="genero" />Femenino <br />
-      </p>
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="card">
+            <img
+              ng-src="{{profe.profesor.foto}}"
+              class="img-thumbnail img-fluid"
+              alt="{{profe.profesor.nombre}}"
+            />
+          </div>
+        </div>
+        <div class="col-sm-9">
+          <div class="card">
+            <div class="card-header">{{profe.profesor.edad}} años</div>
+            <div class="card-body">{{profe.profesor.bio}}</div>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>
