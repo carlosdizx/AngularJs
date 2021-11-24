@@ -1,13 +1,39 @@
 <!DOCTYPE html>
 <html ng-app>
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Primer ejemplo angular</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
     <script src="js/lib/angular.min.js"></script>
-</head>
-<body>
-    <h1>Hola mundo</h1>
-    <h1>{{"Hola mundo"}}</h1>
-</body>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Filtros de angularjs</h1>
+      <hr />
+
+      <p>
+        Filtro de texto: {{ "CaRlOs"}}
+        <br />
+        Filtro de texto: {{ "CaRlOs" | uppercase }}
+        <br />
+        Filtro de texto: {{ "CaRlOs" | lowercase }}
+        <br />
+      </p>
+      <p>
+        Filtro de moneda: {{1350}}
+        <br />
+        Filtro de moneda: {{1350 | currency}}
+        <br />
+        Filtro de moneda: {{1350 | currency:'Col '}}
+        <br />
+        Filtro de moneda: {{1350 | currency:'PesCarlos '}}
+      </p>
+      <p>
+        Filtro de numero {{15602932}}
+        <br />
+        Filtro de numero {{15602932 | number}}
+        <br />
+      </p>
+    </div>
+  </body>
 </html>
